@@ -24,6 +24,7 @@ fi;
 brew install git
 brew install tree
 brew install nvm
+brew install yarn
 brew cask install postman
 brew cask install atom
 brew cask install java
