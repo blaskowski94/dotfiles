@@ -37,7 +37,6 @@ brew cask install slack
 brew cask install insomnia
 brew cask install spotify
 brew cask install gimp
-brew cask install lastpass
 
 # Remove outdated versions from the cellar.
 brew cleanup
