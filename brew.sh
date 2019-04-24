@@ -23,6 +23,21 @@ fi;
 
 brew install git
 brew install tree
+brew install nvm
+brew cask install postman
+brew cask install atom
+brew cask install java
+brew cask install atom
+brew cask install intellij-idea
+brew cask install vlc
+brew cask install iterm2
+brew cask install docker
+brew cask install google-chrome
+brew cask install slack
+brew cask install insomnia
+brew cask install spotify
+brew cask install gimp
+brew cask install lastpass
 
 # Remove outdated versions from the cellar.
 brew cleanup
