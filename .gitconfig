@@ -14,7 +14,7 @@
 	pf = push -f
 	acpf = !git ac && git pf
 	rekt = reset --hard
-	up = !git checkout master && git branch --set-upstream-to=upstream/master && git pull && git push origin master && git dmb
+	up = !git checkout master && git branch --set-upstream-to=upstream/master && git pull && git push origin master && git dm
 	setup = "!f() { git remote add upstream $1 && git fetch --all && git up;}; f"
 	cb = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 	tags = tag -l
