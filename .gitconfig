@@ -80,3 +80,11 @@
 	added = yellow
 	changed = green
 	untracked = cyan
+[user]
+	name = Bob Laskowski
+	email = robert.laskowski@target.com
+[https]
+	sslCAInfo = ~/tgt-ca-bundle.crt
+[core]
+    gitproxy="ssh" for "target.com"
+    gitproxy=default-proxy
