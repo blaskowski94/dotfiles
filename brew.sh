@@ -25,6 +25,12 @@ brew install git
 brew install tree
 brew install nvm
 brew install yarn
+brew install gradle
+brew install gradle-completion
+brew install micro
+brew install jq
+brew install hub
+brew install httpie
 brew cask install postman
 brew cask install atom
 brew cask install java

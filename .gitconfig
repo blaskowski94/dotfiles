@@ -14,7 +14,8 @@
 	pf = push -f
 	acpf = !git ac && git pf
 	rekt = reset --hard
-	up = !git checkout master && git branch --set-upstream-to=upstream/master && git pull && git push origin master && git dm
+	up = !git checkout master && git pull upstream master && git push origin master && git dm
+	upd = !git checkout dev && git pull upstream dev && git push origin dev && git dm
 	setup = "!f() { git remote add upstream $1 && git fetch --all && git up;}; f"
 	cb = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 	tags = tag -l
@@ -25,16 +26,15 @@
 	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
 	reb = "!r() { git rebase -i HEAD~$1; }; r"
 	retag = "!r() { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1; }; r"
-	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d && git pb"
 	contributors = shortlog --summary --numbered
+	pb = !git remote prune origin && git remote prune upstream	
 
 [apply]
-
 	# Detect whitespace errors when applying a patch
 	whitespace = fix
 
 [core]
-
 	# Use custom `.gitignore` and `.gitattributes`
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
@@ -55,36 +55,43 @@
 	# Speed up commands involving untracked files such as `git status`.
 	# https://git-scm.com/docs/git-update-index#_untracked_cache
 	untrackedCache = true
+	editor = micro
 
 [color]
-
 	# Use colors in Git commands that are capable of colored output when
 	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
 	ui = auto
 
 [color "branch"]
-
 	current = yellow reverse
 	local = yellow
 	remote = green
 
 [color "diff"]
-
 	meta = yellow bold
 	frag = magenta bold # line info
 	old = red # deletions
 	new = green # additions
 
 [color "status"]
-
 	added = yellow
 	changed = green
 	untracked = cyan
+
 [user]
 	name = Bob Laskowski
 	email = robert.laskowski@target.com
+
 [https]
 	sslCAInfo = ~/tgt-ca-bundle.crt
+
 [core]
-    gitproxy="ssh" for "target.com"
-    gitproxy=default-proxy
+	gitproxy = ssh for target.com
+	gitproxy = default-proxy
+	autocrlf = input
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
