@@ -62,6 +62,9 @@
 	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
 	ui = auto
 
+[pull]
+	rebase = false
+
 [color "branch"]
 	current = yellow reverse
 	local = yellow

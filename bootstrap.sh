@@ -13,6 +13,7 @@ function doIt() {
 		--exclude "LICENSE-MIT.txt" \
 		--exclude ".history/" \
 		--exclude ".extra_default" \
+		--exclude "configs/" \
 		-avh --no-perms . ~;
 	source ~/.bash_profile;
 }
