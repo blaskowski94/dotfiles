@@ -16,3 +16,6 @@ Thumbs.db
 .history
 
 .extra
+
+configs/micro/backups
+configs/micro/buffers
