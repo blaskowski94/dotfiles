@@ -102,3 +102,12 @@ alias path='echo -e ${PATH//:/\\n}'
 
 # conventional changelog
 alias changelog="conventional-changelog -p angular && conventional-changelog -p angular -i CHANGELOG.md -s"
+
+# kafka
+alias kafka-consume="/Users/z003zkv/kafka-stuff/kafka_2.12-2.2.1/bin/kafka-console-consumer.sh"
+alias kafka-produce="/Users/z003zkv/kafka-stuff/kafka_2.12-2.2.1/bin/kafka-console-producer.sh"
+
+# docker
+alias docker-kill="docker stop $(docker ps -a -q)"
+
+alias pr="g ca && gh pr create --fill --web"
