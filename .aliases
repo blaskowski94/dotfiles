@@ -110,4 +110,4 @@ alias kafka-produce="/Users/z003zkv/kafka-stuff/kafka_2.12-2.2.1/bin/kafka-conso
 # docker
 alias docker-kill="docker stop $(docker ps -a -q)"
 
-alias pr="g ca && gh pr create --fill --web"
+alias pr="gh pr create --fill --web"
